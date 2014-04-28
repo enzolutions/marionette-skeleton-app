@@ -36,8 +36,8 @@ require.config({
   }
 });
 
-// Loading dependences and execute Marionette App
-require( ["marionette"], function (Marionette) {
+define( 'MyApp', ["marionette"], function (Marionette) {
+
     // set up the app instance
     var MyApp = new Marionette.Application();
 
@@ -45,5 +45,12 @@ require( ["marionette"], function (Marionette) {
       alert("Application has started!");
     });
 
+    // export the app from this module
+    return MyApp;
+});
+
+// Fetch and execute Marionette App
+require( ["MyApp"], function (MyApp) {
+    // Execute App
     MyApp.start();
 });
