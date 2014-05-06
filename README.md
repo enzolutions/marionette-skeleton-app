@@ -46,15 +46,15 @@ All modules are separated in folder modules in this way can be instantiated for 
 
 #### Routing
 
-file: <strong>modules/AppRouter.js</strog>
+file: **modules/AppRouter.js**
 
 This example module implements the routes defined in your application.
 
 Routes:
   home: This method must be defined inside the controller associated to Router when the App instantiate the AppRoute module.
-  helloBuddy: Method defined inside the Router using the property <italic>routes</italic>
+  helloBuddy: Method defined inside the Router using the property **routes**
 
-Usage:
+##### Usage:
 
   Load the index.html file, the home route must be executed and you will get an alert message "Hello Marionette"
 
@@ -62,8 +62,8 @@ Usage:
 
 #### Controller
 
-file: <strong>modules/AppController.js</strog>
+file: **modules/AppController.js**
 
-This object must define all methods defined in Router with property <italic>appRoutes</italic> , in this example define the method hellobuddy.
+This object must define all methods defined in Router with property **appRoutes** , in this example define the method hellobuddy.
 
 
