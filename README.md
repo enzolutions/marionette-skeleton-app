@@ -38,6 +38,15 @@ Collections and models and his integration with Views in outside the scope this 
 
 ![Marionnete Skeleton View](https://raw.githubusercontent.com/enzolutions/marionette-skeleton-app/master/images/marionette_skeleton_app.png "Marionnete Skeleton View")
 
+### Errors.
+
+If you run this Marionette JS Application without a Web Server ( Loading directly the index.html file), you will get the following error.
+
+````
+XMLHttpRequest cannot load file:///YOURPATH/marionette-skeleton-app/templates/header.tpl. Cross origin requests are only supported for HTTP.
+
+````
+
 ### Named modules
 
 If you want create named module to use with require, you can check files:
