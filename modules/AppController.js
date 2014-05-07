@@ -1,7 +1,7 @@
 define(["marionette",
-        "text!../templates/hello.tpl",
-        "text!../templates/hi.tpl"],
-        function (Marionette, helloTpl, hiTpl) {
+        "../views/AppHi",
+        "../views/AppHello"],
+        function (Marionette, AppHi, AppHello) {
 
     var Controller = Marionette.Controller.extend({
         initialize : function(options) {
@@ -17,19 +17,17 @@ define(["marionette",
          * @method
          */
          home :  function () {
-            HelloView = new Marionette.ItemView();
-
-            // Define template using Template loaded by require
-            // ToDo: Double Check if this assignation is allowed
-            HelloView.template = _.template(helloTpl);
+            HelloView = new AppHello();
 
             // Add View to region to be render
             this.mainRegion.show(HelloView);
         },
         helloBuddy : function (buddy) {
-          //alert("Hello " + buddy);
-          HiView = new Marionette.ItemView();
-          HiView.template = _.template(hiTpl, { buddy: buddy});
+          HiView = new AppHi({
+            buddy: buddy
+          });
+
+          // Render view in main Region, removing previous view
           this.mainRegion.show(HiView);
         }
     });

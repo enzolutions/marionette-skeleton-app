@@ -22,7 +22,8 @@ require.config({
       exports : 'Backbone'
     },
     wreqr: {
-      deps : ['backbone']
+      deps : ['backbone'],
+      exports: 'Backbone.Wreqr'
     },
     eventbinder : {
       deps : ['backbone']
@@ -41,9 +42,10 @@ require.config({
 require( ["marionette",
           "../modules/AppRouter",
           "../modules/AppController",
-          "text!../templates/header.tpl",
-          "text!../templates/form.tpl"],
-          function (Marionette, AppRouter, AppController, headerTpl, formTpl) {
+          "../modules/AppEventAggregator",
+          "../views/AppHeader",
+          "../views/AppForm",],
+          function (Marionette, AppRouter, AppController, AppEventAggregator, HeaderView, FormView) {
     // set up the app instance
     var MyApp = new Marionette.Application();
 
@@ -55,10 +57,10 @@ require( ["marionette",
       footerRegion: '#footer-region'
     });
 
-    // initialize the app controller
+    // Initialize the app controller
     // Pass reference to Main Region to Controller
     var controller = new AppController({
-      mainRegion: MyApp.mainRegion
+      mainRegion: MyApp.mainRegion,
     });
 
     // initialize the router
@@ -72,39 +74,25 @@ require( ["marionette",
     MyApp.on("initialize:after", function(){
 
       // Createing a generic ItemView for Header
-      headerView = new Marionette.ItemView();
-
-      // Define template using Template loaded by require
-      // ToDo: Double Check if this assignation is allowed
-      headerView.template = _.template(headerTpl);
-
-      // Extend ItemView to define custom events
-      formView  =  Marionette.ItemView.extend({
-        events: {
-            'click button': 'process_form',
-            'keypress input[type=text]': 'keyEnter'
-        },
-        keyEnter : function(e) {
-            if (e.keyCode != 13) {
-                return;
-            }
-            this.process_form(e);
-        },
-        process_form : function (e) {
-            e.preventDefault();
-            var value = this.$el.find('input').val();
-            MyApp.router.navigate('#hello/' + value, {trigger: true});
-        }
-      });
-
-      form = new formView();
-      form.template = _.template(formTpl);
+      headerView = new HeaderView({router: MyApp.router});
 
       // Add Header View to region to be render
       MyApp.headerRegion.show(headerView);
 
+      // Initialiaze EventAggregator a Messaging System
+      MyApp.vent = new AppEventAggregator();
+
+      // Create  Form view
+      formView = new FormView({
+        vent: MyApp.vent,
+      });
+
       // Add Form to render to main region and avoid be replaced
-      MyApp.toolbarRegion.show(form);
+      MyApp.toolbarRegion.show(formView);
+
+      MyApp.vent.on("myapp:buddy", function(buddy){
+        MyApp.router.navigate('#hello/' + buddy, {trigger: true});
+      });
 
       // Start Backbone history a necessary step for bookmarkable URL's
       Backbone.history.start();

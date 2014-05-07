@@ -30,7 +30,13 @@ To help you to defeat that syndrome, here is my proposal for a <a target="_blank
 └── views
 ```
 
-The skeleton implement <a target="_blank" href-"http://requirejs.org/">RequireJS</a> to load libraries and start a MarionetteJS App sample as a RequireJS moduke.
+The skeleton implement <a target="_blank" href-"http://requirejs.org/">RequireJS</a> to load libraries and modules to start a MarionetteJS App.
+
+Is a starting point with structure and sample about how to create modules, views, routing and controller for a Marionette JS application.
+
+Collections and models and his integration with Views in outside the scope this Skeleton, becuase is different in each implemetantion.
+
+![Marionnete Skeleton View](https://raw.githubusercontent.com/enzolutions/marionette-skeleton-app/master/images/marionette_skeleton_app.png "Marionnete Skeleton View")
 
 ### Named modules
 
@@ -56,7 +62,7 @@ Routes:
 
 ##### Usage:
 
-  Load the index.html file, the home route must be executed and you will get an alert message "Hello Marionette"
+  Load the index.html file, the home route must be executed and you will get a bootstrap alert message "Hello Marionette JS"
 
   Load the index.html#hello/enzo, the helloBuddy from the controller is loaded and the fragment after 'hello/' will pass to the method as parameter to generate the message in this case 'Hello enzo'
 
@@ -66,4 +72,21 @@ file: **modules/AppController.js**
 
 This object must define all methods defined in Router with property **appRoutes** , in this example define the method hellobuddy.
 
+### Views
+
+All views were encapsuled as RequireJS module and instanciate in Controller functions and Main Application.
+
+Views can be reused in other controllers
+
+### Templates
+
+All templates where created in templates folder using undescore.js logic and loaded using the pluging <a href="https://github.com/requirejs/text">text</a> for RequireJS
+
+Template are imported in Views.
+
+### Messaging
+
+The Skeleton implement library <a href="https://github.com/marionettejs/backbone.wreqr">Backbone.wreqr</a> for messaging between controller functions and views.
+
+The application has a Input Text to enter a text, when enter key is hitted or the buttong is clicked an event is trigger and catch for the application to activate the **hello** router.
 
