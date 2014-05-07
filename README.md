@@ -12,9 +12,16 @@ To help you to defeat that syndrome, here is my proposal for a <a target="_blank
 ### Structure and Files
 ```
 ├── collections
+├── css
+├── js
+│   ├── main-module.js
+│   ├── main.js
 ├── index-module.html
 ├── index.html
-├── libs
+├── models
+├── modules
+├── templates
+├── vendor
 │   ├── backbone.babysitter.js
 │   ├── backbone.eventbinder.js
 │   ├── backbone.js
@@ -24,9 +31,8 @@ To help you to defeat that syndrome, here is my proposal for a <a target="_blank
 │   ├── main-module.js
 │   ├── main.js
 │   ├── require.js
+│   ├── text.js
 │   └── underscore.js
-├── models
-├── templates
 └── views
 ```
 
