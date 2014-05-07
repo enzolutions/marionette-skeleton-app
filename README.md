@@ -38,7 +38,7 @@ Collections and models and his integration with Views in outside the scope this 
 
 ![Marionnete Skeleton View](https://raw.githubusercontent.com/enzolutions/marionette-skeleton-app/master/images/marionette_skeleton_app.png "Marionnete Skeleton View")
 
-### Errors.
+### Errors
 
 If you run this Marionette JS Application without a Web Server ( Loading directly the index.html file), you will get the following error.
 
