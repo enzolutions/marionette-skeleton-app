@@ -7,7 +7,11 @@ Fortunately last years have been happened a explotion of Javascript Frameworks.
 
 Doesn't matter what framework you choose, in the first steps we suffer the syndrome of white page of writers, to figure out how I can start.
 
-To help you to defeat that syndrome, here is my proposal for a <a target="_blank" href="http://marionettejs.com">Marionette</a> Skeleton App
+To help you to defeat that syndrome, here is my proposal for a <a target="_blank" href="http://marionettejs.com">Marionette</a> Skeleton App.
+
+This Skeleton is a starting point with structure and sample about how to create modules, views, routing and controller for a Marionette JS application.
+
+![Marionnete Skeleton View](https://raw.githubusercontent.com/enzolutions/marionette-skeleton-app/master/images/marionette_skeleton_app.png "Marionnete Skeleton View")
 
 ### Structure and Files
 ```
@@ -38,11 +42,7 @@ To help you to defeat that syndrome, here is my proposal for a <a target="_blank
 
 The skeleton implement <a target="_blank" href-"http://requirejs.org/">RequireJS</a> to load libraries and modules to start a MarionetteJS App.
 
-Is a starting point with structure and sample about how to create modules, views, routing and controller for a Marionette JS application.
-
 Collections and models and their integration with Views in outside the scope this Skeleton, becuase is different in each implemetantion.
-
-![Marionnete Skeleton View](https://raw.githubusercontent.com/enzolutions/marionette-skeleton-app/master/images/marionette_skeleton_app.png "Marionnete Skeleton View")
 
 ### Errors
 
