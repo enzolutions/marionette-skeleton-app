@@ -1,5 +1,5 @@
 require.config({
-  baseUrl: 'libs',
+  baseUrl: 'vendor',
   paths : {
     backbone : 'backbone',
     underscore : 'underscore',
