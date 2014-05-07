@@ -40,7 +40,7 @@ The skeleton implement <a target="_blank" href-"http://requirejs.org/">RequireJS
 
 Is a starting point with structure and sample about how to create modules, views, routing and controller for a Marionette JS application.
 
-Collections and models and his integration with Views in outside the scope this Skeleton, becuase is different in each implemetantion.
+Collections and models and their integration with Views in outside the scope this Skeleton, becuase is different in each implemetantion.
 
 ![Marionnete Skeleton View](https://raw.githubusercontent.com/enzolutions/marionette-skeleton-app/master/images/marionette_skeleton_app.png "Marionnete Skeleton View")
 
