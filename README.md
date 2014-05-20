@@ -44,7 +44,7 @@ This Skeleton is a starting point with structure and sample about how to create 
 
 The skeleton implement <a target="_blank" href-"http://requirejs.org/">RequireJS</a> to load libraries and modules to start a MarionetteJS App.
 
-Collections and models and their integration with Views in outside the scope this Skeleton, becuase is different in each implemetantion.
+Collections and models and their integration with Views in outside the scope this Skeleton, becuase is different in each implemetantion. I recommend to use Drupal as Backend and you can use the Model plugin <a href="https://github.com/enzolutions/backbone.drupal" target="_blank">Backbone.Drupal</a>.
 
 ### Errors
 
