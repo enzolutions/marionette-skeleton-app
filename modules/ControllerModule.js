@@ -1,7 +1,7 @@
 define(["marionette",
-        "../views/AppHi",
-        "../views/AppHello"],
-        function (Marionette, AppHi, AppHello) {
+        "../views/HiView",
+        "../views/HelloView"],
+        function (Marionette, HiView, HelloView) {
 
     var Controller = Marionette.Controller.extend({
         initialize : function(options) {
@@ -17,18 +17,18 @@ define(["marionette",
          * @method
          */
          home :  function () {
-            HelloView = new AppHello();
+            helloView = new HelloView();
 
             // Add View to region to be render
-            this.mainRegion.show(HelloView);
+            this.mainRegion.show(helloView);
         },
         helloBuddy : function (buddy) {
-          HiView = new AppHi({
+          hiView = new HiView({
             buddy: buddy
           });
 
           // Render view in main Region, removing previous view
-          this.mainRegion.show(HiView);
+          this.mainRegion.show(hiView);
         }
     });
 

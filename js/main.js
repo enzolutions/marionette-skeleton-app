@@ -40,12 +40,13 @@ require.config({
 
 // Loading dependences and module to execute Marionette App
 require( ["marionette",
-          "../modules/AppRouter",
-          "../modules/AppController",
-          "../modules/AppEventAggregator",
-          "../views/AppHeader",
-          "../views/AppForm",],
-          function (Marionette, AppRouter, AppController, AppEventAggregator, HeaderView, FormView) {
+          "../modules/RouterModule",
+          "../modules/ControllerModule",
+          "../modules/EventAggregatorModule",
+          "../views/HeaderView",
+          "../views/FooterView",
+          "../views/FormView",],
+          function (Marionette, RouterModule, ControllerModule, EventAggregatorModule, HeaderView, FooterView, FormView) {
     // set up the app instance
     var MyApp = new Marionette.Application();
 
@@ -59,12 +60,12 @@ require( ["marionette",
 
     // Initialize the app controller
     // Pass reference to Main Region to Controller
-    var controller = new AppController({
+    var controller = new ControllerModule({
       mainRegion: MyApp.mainRegion,
     });
 
     // initialize the router
-    MyApp.router = new AppRouter({
+    MyApp.router = new RouterModule({
       controller : controller
     });
 
@@ -73,14 +74,17 @@ require( ["marionette",
 
     MyApp.on("initialize:after", function(){
 
-      // Createing a generic ItemView for Header
-      headerView = new HeaderView({router: MyApp.router});
+      // Creating a generic ItemView for Header
+      headerView = new HeaderView();
 
       // Add Header View to region to be render
       MyApp.headerRegion.show(headerView);
 
-      // Initialiaze EventAggregator a Messaging System
-      MyApp.vent = new AppEventAggregator();
+      // Creating a generic ItemView for Footer
+      footerView = new FooterView();
+
+      // Add Header View to region to be render
+      MyApp.footerRegion.show(footerView);
 
       // Create  Form view
       formView = new FormView({
