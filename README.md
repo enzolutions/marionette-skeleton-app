@@ -24,6 +24,7 @@ This Skeleton is a starting point with structure and sample about how to create 
 │   ├── main.js
 ├── index-module.html
 ├── index.html
+├── layouts
 ├── models
 ├── modules
 ├── templates
