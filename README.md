@@ -11,7 +11,7 @@ To help you to defeat that syndrome, here is my proposal for a <a target="_blank
 
 This Skeleton is a starting point with structure and sample about how to create modules, views, routing and controller for a Marionette JS application.
 
-**DEMO** : <a target="_blank" href="http://enzolutions.github.io/marionette-skeleton-app/">http://enzolutions.github.io/marionette-skeleton-app/</a>
+**DEMO** : <a target="_blank" href="http://enzolutions.com/marionette-skeleton-app/">http://enzolutions.com/marionette-skeleton-app/</a>
 
 ![Marionnete Skeleton View](https://raw.githubusercontent.com/enzolutions/marionette-skeleton-app/master/images/marionette_skeleton_app.png "Marionnete Skeleton View")
 
